@@ -4,6 +4,11 @@
 	"description": "Automatically collapse inactive Explorer paths.",
 	"version": "0.0.1",
 	"license": "GPL-3.0-or-later",
+	"keywords": [
+		"explorer",
+		"collapse",
+		"reveal"
+	],
 	"engines": {
 		"vscode": "^1.33.0"
 	},
@@ -13,6 +18,16 @@
 	"activationEvents": [
 		"*"
 	],
+	"icon": "icon.png",
+	"homepage": "https://github.com/phyllisstein/vscode-collapse-then-reveal",
+	"bugs": {
+		"url": "https://github.com/phyllisstein/vscode-collapse-then-reveal",
+		"email": "daniel@daniel.sh"
+	},,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/phyllisstein/vscode-collapse-then-reveal.git"
+	},
 	"main": "./out/extension.js",
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
