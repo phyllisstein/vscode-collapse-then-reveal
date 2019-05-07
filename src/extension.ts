@@ -6,14 +6,13 @@ import {
 } from 'vscode'
 
 export function activate(context: ExtensionContext) {
-	context.subscriptions.push(window.onDidChangeActiveTextEditor(collapseThenReveal))
+	context.subscriptions.push(window.onDidChangeVisibleTextEditors(collapseThenReveal))
 }
 
-function collapseThenReveal(editor?: TextEditor) {
-	commands.executeCommand('workbench.files.action.collapseExplorerFolders')
-
-	if (editor) {
-		commands.executeCommand('revealInExplorer')
-		window.showTextDocument(editor.document)
+async function collapseThenReveal(editors?: TextEditor[]) {
+	if (editors && editors.length) {
+		await commands.executeCommand('workbench.files.action.collapseExplorerFolders')
+		await commands.executeCommand('revealInExplorer')
+		window.showTextDocument(editors[0].document)
 	}
 }
