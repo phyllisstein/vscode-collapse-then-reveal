@@ -2,7 +2,7 @@
   "name": "collapse-then-reveal",
   "displayName": "Collapse Then Reveal",
   "description": "Automatically collapse inactive Explorer paths.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "GPL-3.0-or-later",
   "keywords": [
     "explorer",
@@ -10,13 +10,13 @@
     "reveal"
   ],
   "engines": {
-    "vscode": "^1.33.0"
+    "vscode": "^1.46.0"
   },
   "categories": [
     "Other"
   ],
   "activationEvents": [
-    "*"
+    "onView:fileView"
   ],
   "publisher": "phyllisstein",
   "icon": "icon.png",
@@ -47,6 +47,7 @@
     "vscode": "^1.1.28"
   },
   "dependencies": {
+    "delay": "^4.3.0",
     "lodash.debounce": "^4.0.8",
     "lodash.head": "^4.0.1"
   }

@@ -1,4 +1,8 @@
 # Change Log
+## 0.0.4 - 24 June 2020
+* Delay the collapse trigger for a less jarring UX.
+* Only activate when the file explorer is visible.
+
 ## 0.0.3 - 13 May 2020
 * Fix focus-stealing bug by ignoring editors which are not bound to a discrete
   file.
