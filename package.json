@@ -2,7 +2,7 @@
   "name": "collapse-then-reveal",
   "displayName": "Collapse Then Reveal",
   "description": "Automatically collapse inactive Explorer paths.",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "license": "GPL-3.0-or-later",
   "keywords": [
     "explorer",
