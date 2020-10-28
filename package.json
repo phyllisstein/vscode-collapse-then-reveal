@@ -10,13 +10,13 @@
     "reveal"
   ],
   "engines": {
-    "vscode": "^1.46.0"
+    "vscode": "^1.50.0"
   },
   "categories": [
     "Other"
   ],
   "activationEvents": [
-    "onView:fileView"
+    "*"
   ],
   "publisher": "phyllisstein",
   "icon": "icon.png",
@@ -33,22 +33,22 @@
   "scripts": {
     "vscode:prepublish": "yarn run compile",
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "yarn run compile && node ./node_modules/vscode/bin/test"
+    "watch": "tsc -watch -p ./"
   },
   "devDependencies": {
     "@types/lodash.debounce": "^4.0.6",
     "@types/lodash.head": "^4.0.6",
-    "@types/mocha": "^2.2.42",
-    "@types/node": "^10.12.21",
-    "tslint": "^5.12.1",
-    "typescript": "^3.3.1",
-    "vscode": "^1.1.28"
+    "@types/lodash.isempty": "^4.4.6",
+    "@types/mocha": "^8.0.3",
+    "@types/node": "^14.11.8",
+    "tslint": "^5.20.1",
+    "typescript": "^4.0.3"
   },
   "dependencies": {
-    "delay": "^4.3.0",
+    "@types/vscode": "^1.50.0",
+    "delay": "^4.4.0",
     "lodash.debounce": "^4.0.8",
-    "lodash.head": "^4.0.1"
+    "lodash.head": "^4.0.1",
+    "lodash.isempty": "^4.4.0"
   }
 }

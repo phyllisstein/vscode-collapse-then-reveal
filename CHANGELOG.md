@@ -1,4 +1,7 @@
 # Change Log
+## 0.1.0 - 28 October 2020
+* _Really_ fix focus-stealing bug.
+
 ## 0.0.4 - 24 June 2020
 * Delay the collapse trigger for a less jarring UX.
 * Only activate when the file explorer is visible.

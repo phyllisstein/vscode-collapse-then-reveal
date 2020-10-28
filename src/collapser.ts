@@ -1,34 +1,23 @@
-import {
-  commands,
-  Disposable,
-  ExtensionContext,
-  TextEditor,
-  window,
-} from 'vscode'
+import * as vscode from 'vscode'
 import debounce from 'lodash.debounce'
+import isEmpty from 'lodash.isempty'
 
 export class Collapser {
-  disposable: Disposable
+  disposable: vscode.Disposable
 
   constructor() {
-    const collapseDisposable = window.onDidChangeActiveTextEditor(
-      debounce(this.collapseThenReveal, 250, { leading: false, trailing: true }),
+    const collapseDisposable = vscode.window.onDidChangeActiveTextEditor(
+      this.collapseThenReveal
     )
-    this.disposable = Disposable.from(collapseDisposable)
+    this.disposable = vscode.Disposable.from(collapseDisposable)
   }
 
-  private collapseThenReveal = async (editor?: TextEditor) => {
+  private collapseThenReveal = async (editor?: vscode.TextEditor) => {
     if (editor && editor.document.uri.scheme === 'file') {
-      commands.executeCommand('workbench.files.action.collapseExplorerFolders')
-      await commands.executeCommand('revealInExplorer')
-      await Promise.resolve().then(resolve => {
-        window.showTextDocument(editor.document)
-      })
+      await vscode.commands.executeCommand('workbench.files.action.collapseExplorerFolders')
+      await vscode.commands.executeCommand('revealInExplorer')
+      await vscode.window.showTextDocument(editor.document)
       return
-    }
-
-    if (editor == null && window.visibleTextEditors.length === 0) {
-      await commands.executeCommand('workbench.files.action.collapseExplorerFolders')
     }
   }
 }

@@ -1,7 +1,7 @@
 import {Collapser} from './collapser'
-import {ExtensionContext} from 'vscode'
+import * as vscode from 'vscode'
 
-export function activate(context: ExtensionContext) {
+export function activate(context: vscode.ExtensionContext) {
   const collapser = new Collapser()
   context.subscriptions.push(collapser.disposable)
 }
